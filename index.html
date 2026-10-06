@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TRIO Design House — Breathe Your Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<meta name="description" content="TRIO Design House: interior and exterior design portfolio."><meta name="theme-color" content="#1b3835"><link rel="icon" href="img/favicon.png">
+<link rel="preload" as="image" href="img/intro-1100.webp" imagesrcset="img/intro-640.webp 640w,img/intro-1100.webp 1100w" imagesizes="100vw" fetchpriority="high">
+<style>
+:root{--ink:#1b3835;--pine:#2d4f46;--sage:#4a6d61;--mist:#9aa38c;--cream:#efe5e0;--peach:#f5d9bf;--gold:#e5a94d;
+--disp:'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif;--body:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px;background:var(--ink)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--ink);color:var(--cream);font:400 clamp(19px,2.2vw,23px)/1.45 var(--body);overflow-x:hidden}
+[dir=rtl] body,[dir=rtl] .disp,[dir=rtl] button{font-family:'Cairo',var(--body)}
+[dir=rtl] .disp{font-weight:900;letter-spacing:0!important;line-height:1.1!important}
+img{display:block;max-width:100%}
+.disp{font-family:var(--disp);font-weight:400;text-transform:uppercase;letter-spacing:.04em;line-height:.9;margin:0}
+[dir=rtl] .disp{text-transform:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* nav: the logo hangs from the top edge like on the printed cover */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;padding-top:env(safe-area-inset-top,0px)}
+nav>*{pointer-events:auto}
+.tab{background:var(--ink);padding:14px 18px 16px;margin-inline-start:clamp(14px,4vw,48px)}
+.tab img{height:44px;width:auto}
+.nav-r{display:flex;gap:clamp(12px,3vw,34px);align-items:center;padding:20px clamp(14px,4vw,48px);background:linear-gradient(#1b3835cc,#1b383500)}
+.nav-r a{text-decoration:none;font-size:1.05rem;letter-spacing:.06em}
+.nav-r a.lk{display:none}
+@media(min-width:760px){.nav-r a.lk{display:inline}}
+.lang{background:var(--gold);color:var(--ink);border:0;padding:8px 16px;font:600 1rem var(--body);cursor:pointer;letter-spacing:.08em}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(18px,5vw,72px) clamp(70px,11vh,120px);isolation:isolate;overflow:hidden;clip-path:polygon(0 0,100% 0,100% calc(100% - 5vw),0 100%)}
+.slides{position:absolute;inset:-6% 0;z-index:-2;will-change:transform}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:sl 28s infinite}
+.slides img:nth-child(2){animation-delay:7s}.slides img:nth-child(3){animation-delay:14s}.slides img:nth-child(4){animation-delay:21s}
+@keyframes sl{0%{opacity:0;transform:scale(1.14)}5%{opacity:1}25%{opacity:1}32%,100%{opacity:0;transform:scale(1.02)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,#1b3835f2 8%,#2d4f46aa 55%,#4a6d6155)}
+h1.disp{font-size:clamp(76px,19vw,290px);color:var(--cream)}
+h1 .ln{display:block;overflow:hidden;padding-top:.04em}
+h1 .ln>span{display:block;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .ln:nth-child(2)>span{animation-delay:.14s}h1 .ln:nth-child(3)>span{animation-delay:.28s}
+h1 .ln:empty{display:none}
+@keyframes up{to{transform:none}}
+.sub{max-width:34ch;margin:22px 0 0;font-size:clamp(20px,2.4vw,27px);opacity:0;animation:fade 1s .9s forwards;border-inline-start:6px solid var(--gold);padding-inline-start:16px}
+@keyframes fade{to{opacity:1}}
+.scroll{position:absolute;inset-inline-end:clamp(18px,5vw,72px);bottom:clamp(70px,11vh,120px);writing-mode:vertical-rl;letter-spacing:.2em;font-size:.95rem;opacity:.8}
+
+/* marquee */
+.mq{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:12px 0}
+.mq div{display:inline-flex;animation:mq 34s linear infinite}
+[dir=rtl] .mq div{animation-direction:reverse}
+.mq span{font:400 clamp(26px,4vw,44px)/1 var(--disp);letter-spacing:.06em;padding:0 22px;display:inline-flex;align-items:center;gap:44px;text-transform:uppercase}
+[dir=rtl] .mq span{font-family:'Cairo';font-weight:900;letter-spacing:0}
+.mq span::after{content:"";width:16px;height:16px;background:var(--ink);clip-path:polygon(0 35%,100% 0,100% 100%,0 100%)}
+@keyframes mq{to{transform:translateX(-50%)}}
+[dir=rtl] .mq div{animation-name:mqr}@keyframes mqr{to{transform:translateX(50%)}}
+
+/* statement: words light up as you scroll */
+.stmt{background:var(--pine);padding:clamp(80px,14vw,200px) clamp(18px,6vw,100px)}
+.stmt p{margin:0;max-width:20em;font:400 clamp(40px,7.4vw,112px)/1 var(--disp);text-transform:uppercase;letter-spacing:.02em}
+[dir=rtl] .stmt p{font-family:Cairo;font-weight:900;line-height:1.35;text-transform:none;letter-spacing:0}
+.stmt p span{opacity:.22;transition:opacity .25s}.stmt p span.on{opacity:1}
+
+/* work */
+.work{background:var(--cream);color:var(--ink);padding:clamp(60px,9vw,130px) clamp(14px,4vw,64px)}
+.wh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:34px}
+.wh h2{font-size:clamp(52px,9vw,130px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{background:transparent;border:2px solid var(--ink);color:var(--ink);padding:7px 18px;font:600 1.05rem var(--body);cursor:pointer;transition:.25s}
+.chips button[aria-pressed=true],.chips button:hover{background:var(--ink);color:var(--cream)}
+.chips button[aria-pressed=true]{box-shadow:6px 6px 0 var(--gold)}
+.grid{columns:3 300px;column-gap:clamp(12px,2vw,26px)}
+.card{break-inside:avoid;margin:0 0 clamp(12px,2vw,26px);position:relative;cursor:pointer;perspective:900px;transition:opacity .4s,transform .4s;border:0;padding:0;background:none;display:block;width:100%;text-align:inherit;color:inherit}
+.card.off{display:none}
+.card .ph{position:relative;overflow:hidden;clip-path:polygon(0 5%,100% 0,100% 100%,0 100%);transition:transform .25s ease-out}
+.card img{width:100%;height:auto;transition:transform .8s}
+.card:hover img{transform:scale(1.07)}
+.cap{position:absolute;inset-inline-start:0;bottom:0;background:var(--ink);color:var(--cream);padding:10px 18px 12px;font:400 1.55rem/1 var(--disp);letter-spacing:.06em;max-width:80%;text-transform:uppercase;transition:padding .3s}
+[dir=rtl] .cap{font-family:Cairo;font-weight:600;font-size:1.05rem;letter-spacing:0;text-transform:none;line-height:1.3}
+.cap::before{content:"";display:block;width:34px;height:6px;background:var(--gold);margin-bottom:8px;transition:width .35s}
+.card:hover .cap::before{width:100%}
+
+/* story blocks */
+.st{display:grid;grid-template-columns:1fr;position:relative;overflow:hidden}
+.st:nth-of-type(odd){background:var(--sage)}.st:nth-of-type(even){background:var(--ink)}
+.st .im{position:relative;min-height:62vh;overflow:hidden;clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - 4vw))}
+.st .im img{position:absolute;inset:-12% 0;width:100%;height:124%;object-fit:cover}
+.st .tx{padding:clamp(34px,6vw,90px) clamp(18px,6vw,90px);align-self:center;position:relative}
+.st h3{font-size:clamp(54px,8.5vw,128px);margin-bottom:20px}
+.st .tx::before{content:"";display:block;width:90px;height:12px;background:var(--gold);margin-bottom:26px}
+.st p{max-width:30ch;margin:0;font-size:clamp(21px,2.3vw,28px)}
+@media(min-width:900px){.st{grid-template-columns:1.1fr 1fr;min-height:92vh}.st:nth-of-type(even){grid-template-columns:1fr 1.1fr}.st:nth-of-type(even) .im{order:2;clip-path:polygon(0 0,100% 0,100% calc(100% - 4vw),0 100%)}.st .im{clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - 4vw))}}
+
+/* contact */
+.cta{position:relative;background:var(--ink);padding:clamp(80px,12vw,180px) clamp(18px,6vw,100px) 60px;overflow:hidden}
+.cta h2{font-size:clamp(60px,12vw,190px);max-width:9em}
+.ph-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
+.ph-row a{background:var(--cream);color:var(--ink);text-decoration:none;font:400 clamp(30px,5vw,56px)/1 var(--disp);letter-spacing:.08em;padding:14px 26px;transition:.25s;direction:ltr}
+.ph-row a:hover{background:var(--gold);transform:translateY(-5px)}
+.cta .site{display:inline-block;margin-top:34px;font-size:1.3rem;border-bottom:3px solid var(--gold);text-decoration:none}
+.cta img.lg{position:absolute;inset-inline-end:-2%;bottom:-6%;width:min(46vw,520px);opacity:.09;pointer-events:none}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:99;background:#102421ee;display:none;align-items:center;justify-content:center;padding:20px;flex-direction:column;gap:14px}
+.lb.on{display:flex}.lb img{max-height:82vh;object-fit:contain;animation:fade .3s both}.lb p{margin:0;font-size:1.2rem}
+@media(prefers-reduced-motion:reduce){.slides img{animation:none!important}.slides img:first-child{opacity:1}*{animation-duration:.01s!important;animation-delay:0s!important;scroll-behavior:auto!important;transition:none!important}.mq div{animation:none}}
+.hv{position:absolute;inset:-6% 0;z-index:-2;width:100%;height:112%;object-fit:cover;opacity:0;transition:opacity 1s;will-change:transform}.hv.on{opacity:1}</style>
+</head>
+<body>
+<nav>
+ <div class="tab"><img src="img/logo.webp" width="246" height="167" alt="TRIO Design House"></div>
+ <div class="nav-r"><a class="lk" href="#work" data-en="Work" data-ar="أعمالنا">Work</a><a class="lk" href="#story" data-en="Story" data-ar="حكايتنا">Story</a><a class="lk" href="#contact" data-en="Contact" data-ar="تواصل">Contact</a><button class="lang" id="lang" aria-label="Switch language">AR</button></div>
+</nav>
+
+<header class="hero">
+ <div class="slides"><img src="img/intro-1100.webp" srcset="img/intro-640.webp 640w, img/intro-1100.webp 1100w" sizes="100vw" fetchpriority="high" alt=""><img data-srcset="img/n_master-640.webp 640w, img/n_master-1100.webp 1100w, img/n_master-1600.webp 1600w" sizes="100vw" alt=""><img data-srcset="img/n_bar-640.webp 640w, img/n_bar-1100.webp 1100w, img/n_bar-1600.webp 1600w" sizes="100vw" alt=""><img data-srcset="img/p5-640.webp 640w, img/p5-1100.webp 1100w" sizes="100vw" alt=""></div><video class="hv" id="hv" muted loop playsinline preload="none" aria-hidden="true" disablepictureinpicture></video>
+ <h1 class="disp"><span class="ln"><span data-en="Breathe" data-ar="تنفّس">Breathe</span></span><span class="ln"><span data-en="your" data-ar="مساحتك">your</span></span><span class="ln"><span data-en="space" data-ar="">space</span></span></h1>
+ <p class="sub" data-en="We don’t just design places… we create meaningful experiences, emotional connections, and spaces that truly reflect the soul." data-ar="لا نصمّم أماكن فقط… بل نصنع تجارب ذات معنى، وروابط وجدانية، ومساحات تعكس الروح حقًا.">We don’t just design places… we create meaningful experiences, emotional connections, and spaces that truly reflect the soul.</p>
+ <div class="scroll" data-en="Scroll" data-ar="اسحب لأسفل">Scroll</div>
+</header>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section class="stmt"><p id="stmt" data-en="We design spaces to reflect our clients’ lifestyle, their emotions, and the future they envision for themselves." data-ar="نصمّم المساحات لتعكس أسلوب حياة عملائنا، ومشاعرهم، والمستقبل الذي يتخيّلونه لأنفسهم."></p></section>
+
+<section class="work" id="work">
+ <div class="wh"><h2 class="disp" data-en="Selected work" data-ar="أعمال مختارة">Selected work</h2>
+ <div class="chips" id="chips"></div></div>
+ <div class="grid" id="grid"></div>
+</section>
+
+<div id="story">
+<section class="st"><div class="im"><img src="img/p2-1100.webp" srcset="img/p2-640.webp 640w, img/p2-1100.webp 1100w" sizes="(min-width:900px) 55vw,100vw" loading="lazy" decoding="async" alt="" data-par></div><div class="tx"><h3 class="disp" data-en="Your perfect home" data-ar="بيتك المثالي">Your perfect home</h3><p data-en="Our journey begins with an idea, flows through meticulous planning, and blossoms in every detail of the final finish, executed with the highest standards of quality and care." data-ar="رحلتنا تبدأ بفكرة، وتمر بتخطيط دقيق، وتزهر في كل تفصيلة من التشطيب النهائي، بأعلى معايير الجودة والاهتمام.">Our journey begins with an idea, flows through meticulous planning, and blossoms in every detail of the final finish, executed with the highest standards of quality and care.</p></div></section>
+<section class="st"><div class="im"><img src="img/p4-1100.webp" srcset="img/p4-640.webp 640w, img/p4-1100.webp 1100w" sizes="(min-width:900px) 55vw,100vw" loading="lazy" decoding="async" alt="" data-par></div><div class="tx"><h3 class="disp" data-en="Luxurious outdoors" data-ar="واجهات فاخرة">Luxurious outdoors</h3><p data-en="We specialize in exceptional exterior designs that combine innovative architecture and impeccable craftsmanship, highlighting luxury through every carefully chosen detail." data-ar="نتخصص في تصميم الواجهات الخارجية التي تجمع بين العمارة المبتكرة والحرفية المتقنة، لتبرز الفخامة في كل تفصيلة مختارة بعناية.">We specialize in exceptional exterior designs that combine innovative architecture and impeccable craftsmanship, highlighting luxury through every carefully chosen detail.</p></div></section>
+<section class="st"><div class="im"><img src="img/p6a-1100.webp" srcset="img/p6a-640.webp 640w, img/p6a-1100.webp 1100w" sizes="(min-width:900px) 55vw,100vw" loading="lazy" decoding="async" alt="" data-par></div><div class="tx"><h3 class="disp" data-en="Offices that welcome" data-ar="مكاتب تُرحّب بزوّارها">Offices that welcome</h3><p data-en="A reception is the first impression and the face of the brand. We blend elegance and professionalism with premium materials, thoughtful lighting, and refined details." data-ar="الاستقبال هو الانطباع الأول ووجه العلامة التجارية. نمزج الأناقة بالاحترافية بخامات فاخرة وإضاءة مدروسة وتفاصيل راقية.">A reception is the first impression and the face of the brand. We blend elegance and professionalism with premium materials, thoughtful lighting, and refined details.</p></div></section>
+</div>
+
+<footer class="cta" id="contact">
+ <h2 class="disp" data-en="Perfection in every single piece" data-ar="الإتقان في كل قطعة">Perfection in every single piece</h2>
+ <div class="ph-row"><a href="tel:+201070728782">01070728782</a><a href="tel:+201008768000">01008768000</a><a href="tel:+201070728780">01070728780</a></div>
+ <a class="site" href="https://www.triodesignhouse.com">www.triodesignhouse.com</a>
+ <img class="lg" src="img/logo.webp" loading="lazy" alt="">
+</footer>
+<div class="lb" id="lb" role="dialog" aria-modal="true"><img id="lbi" alt=""><p id="lbc"></p></div>
+
+<script>
+const P=(k,w)=>`img/${k}-${w}.webp`;
+const W=[["n_living", "home", "Curved sofa living room", "غرفة معيشة بكنبة منحنية"], ["p4", "out", "Villa exterior", "واجهة فيلا"], ["s1a", "home", "Living room with TV wall", "غرفة معيشة بحائط تلفزيون"], ["n_kids1", "kids", "Kids room, cars theme", "غرفة طفل بثيم السيارات"], ["n_bar", "kitchen", "Open kitchen with bar", "مطبخ مفتوح مع بار"], ["s1b", "home", "Cozy living room", "غرفة معيشة دافئة"], ["p3", "home", "Dream bedroom", "غرفة نوم الأحلام"], ["n_gym1", "gym", "Home gym", "جيم منزلي"], ["s2a", "kitchen", "Marble U-kitchen", "مطبخ رخام على شكل U"], ["p9", "bath", "Marble bathroom", "حمّام رخام"], ["n_master", "home", "Cream master suite", "ماستر بيج هادئ"], ["s2b", "kitchen", "Kitchen with black appliances", "مطبخ بأجهزة سوداء"], ["p6a", "off", "Brokers Hub reception", "استقبال Brokers Hub"], ["n_kitchen", "kitchen", "Modern kitchen", "مطبخ عصري"], ["s4a", "bath", "Blush bathroom", "حمّام بدرجات الروز"], ["p7", "home", "Curved living room", "ريسبشن منحني"], ["n_kids2", "kids", "Kids bedroom", "غرفة نوم أطفال"], ["s3", "home", "Living and dining space", "معيشة وسفرة"], ["p10a", "off", "Zarganza, floral swing", "Zarganza، أرجوحة الورود"], ["n_bath", "bath", "Shower bathroom", "حمّام بدش"], ["s4b", "bath", "Glass shower bathroom", "حمّام بشاور زجاج"], ["p8", "home", "Master bedroom", "غرفة نوم رئيسية"], ["n_gym2", "gym", "Power rack gym", "جيم بحامل أوزان"], ["s5a", "home", "Calm master bedroom", "غرفة نوم رئيسية هادئة"], ["p11a", "off", "Arched meeting pods", "كبائن اجتماعات مقوّسة"], ["p2", "home", "Stone TV wall", "حائط تلفزيون حجري"], ["s5b", "home", "Bedroom with vanity desk", "غرفة نوم بتسريحة"], ["p10b", "off", "Zarganza, lounge", "Zarganza، منطقة جلوس"], ["p6b", "off", "Lounge lobby", "لوبي"], ["s6a", "dress", "Glass dressing room", "دريسينج بواجهات زجاج"], ["p11b", "off", "Workspace aisle", "ممر مساحة العمل"], ["p5", "home", "Living room", "غرفة معيشة"], ["s6b", "dress", "Walk-in wardrobe", "غرفة ملابس"]];
+const C=[["all", "All", "الكل"], ["home", "Homes", "بيوت"], ["kitchen", "Kitchens", "مطابخ"], ["kids", "Kids", "غرف أطفال"], ["gym", "Gyms", "جيم"], ["bath", "Bathrooms", "حمّامات"], ["dress", "Dressing", "دريسينج"], ["off", "Offices", "مكاتب"], ["out", "Outdoors", "واجهات"]];
+const D={"intro": [1100, 619], "n_living": [1100, 931], "n_master": [1100, 1063], "n_bar": [1100, 1051], "p5": [1100, 911], "n_kitchen": [1100, 1072], "n_bath": [1100, 1271], "n_gym1": [1100, 913], "n_gym2": [1100, 872], "n_kids1": [1100, 945], "n_kids2": [1100, 879], "p2": [1063, 738], "p3": [1100, 1002], "p4": [994, 1327], "p6a": [925, 570], "p6b": [960, 604], "p7": [1100, 929], "p8": [1000, 845], "p9": [900, 1055], "p10a": [657, 775], "p10b": [920, 691], "p11a": [698, 932], "p11b": [346, 458], "s1a": [754, 625], "s1b": [754, 630], "s2a": [670, 554], "s2b": [670, 701], "s4a": [751, 629], "s4b": [751, 626], "s5a": [761, 629], "s5b": [761, 626], "s6a": [748, 630], "s6b": [748, 625], "s3": [1100, 917]};
+const MQ=[['Homes','Outdoors','Offices','Receptions','Bathrooms','Bedrooms'],['بيوت','واجهات','مكاتب','استقبال','حمّامات','غرف نوم']];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+addEventListener('load',()=>setTimeout(()=>{const c=navigator.connection;if(c&&(c.saveData||/2g/.test(c.effectiveType)))return;$$('.slides img[data-srcset]').forEach(i=>{i.srcset=i.dataset.srcset});if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const v=$('#hv');v.src='video/intro.mp4';v.addEventListener('playing',()=>{v.classList.add('on');setTimeout(()=>{$('.slides').style.display='none'},1100)},{once:true});v.play().catch(()=>{});new IntersectionObserver(e=>{e[0].isIntersecting?v.play().catch(()=>{}):v.pause()}).observe($('.hero'))},600));
+let lang='en',cat='all';
+const grid=$('#grid');
+W.forEach(([k,c,e,a])=>{const b=document.createElement('button');b.className='card';b.dataset.c=c;b.innerHTML=`<div class="ph"><img src="${P(k,640)}" srcset="${P(k,640)} 640w, ${P(k,1100)} 1100w" sizes="(min-width:1000px) 31vw,(min-width:640px) 48vw,96vw" width="${D[k][0]}" height="${D[k][1]}" alt="${e}" loading="lazy" decoding="async"><div class="cap" data-en="${e}" data-ar="${a}">${e}</div></div>`;grid.append(b);
+ const ph=b.firstChild;
+ b.addEventListener('pointermove',ev=>{if(ev.pointerType!=='mouse')return;const r=b.getBoundingClientRect(),x=(ev.clientX-r.left)/r.width-.5,y=(ev.clientY-r.top)/r.height-.5;ph.style.transform=`rotateY(${x*9}deg) rotateX(${-y*9}deg)`});
+ b.addEventListener('pointerleave',()=>ph.style.transform='');
+ b.addEventListener('click',()=>{$('#lbi').src=P(k,1100);$('#lbc').textContent=lang=='en'?e:a;$('#lb').classList.add('on')});});
+$('#lb').onclick=()=>$('#lb').classList.remove('on');
+addEventListener('keydown',e=>{if(e.key==='Escape')$('#lb').classList.remove('on')});
+const chips=$('#chips');
+C.forEach(([k,e,a])=>{const b=document.createElement('button');b.dataset.k=k;b.dataset.en=e;b.dataset.ar=a;b.textContent=e;b.setAttribute('aria-pressed',k==='all');
+ b.onclick=()=>{cat=k;$$('#chips button').forEach(x=>x.setAttribute('aria-pressed',x===b));$$('.card').forEach(c=>c.classList.toggle('off',k!=='all'&&c.dataset.c!==k))};chips.append(b)});
+function words(){const p=$('#stmt');p.innerHTML=p.dataset[lang].split(' ').map(w=>`<span>${w}</span> `).join('');onScroll()}
+function setLang(l){lang=l;if(l==='ar'&&!window.cf){cf=1;const k=document.createElement('link');k.rel='stylesheet';k.href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;900&display=swap';document.head.append(k)}const d=document.documentElement;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';$('#lang').textContent=l==='ar'?'EN':'AR';
+ $$('[data-en]').forEach(el=>{if(el.id!=='stmt')el.textContent=el.dataset[l]});
+ const m=MQ[l==='ar'?1:0].map(w=>`<span>${w}</span>`).join('');$('#mq').innerHTML=m.repeat(4);words()}
+$('#lang').onclick=()=>setLang(lang==='en'?'ar':'en');
+function onScroll(){const h=innerHeight;$$('#stmt span').forEach(s=>{const r=s.getBoundingClientRect();s.classList.toggle('on',r.top<h*.72)});
+ if(!matchMedia('(prefers-reduced-motion:reduce)').matches){$$('[data-par]').forEach(i=>{const r=i.parentNode.getBoundingClientRect();if(r.bottom<0||r.top>h)return;i.style.transform=`translateY(${(r.top+r.height/2-h/2)*-.12}px)`});
+ if(scrollY<h){const t=`translateY(${scrollY*.2}px)`;$('.slides').style.transform=t;$('#hv').style.transform=t}}}
+addEventListener('scroll',()=>requestAnimationFrame(onScroll),{passive:true});
+setLang('en');
+</script>
+</body>
+</html>
